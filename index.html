@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro Canva Pro</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --card-2: #0b1220;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --primary: #00c4cc;
+      --accent: #7d2ae8;
+      --success: #22c55e;
+      --danger: #ef4444;
+      --warn-bg: rgba(239, 68, 68, 0.14);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body {
+      background: linear-gradient(160deg, #0f172a 0%, #171333 100%);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .container {
+      width: 100%;
+      max-width: 460px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      gap: 10px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 20px;
+    }
+    .brand h1 { font-size: 18px; line-height: 1.2; }
+    .brand p { font-size: 12px; color: var(--muted); }
+    .timer {
+      background: rgba(239, 68, 68, 0.16);
+      border: 1px solid rgba(239, 68, 68, 0.45);
+      color: #fca5a5;
+      padding: 6px 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .field { margin-bottom: 14px; }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #e2e8f0;
+    }
+    .hint {
+      font-size: 11.5px;
+      color: #fbbf24;
+      margin-top: 4px;
+      display: block;
+    }
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card-2);
+      color: var(--text);
+      font-size: 15px;
+      outline: none;
+    }
+    input:focus { border-color: var(--primary); }
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .plan-btn {
+      background: var(--card-2);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 6px;
+      color: var(--text);
+      cursor: pointer;
+      text-align: center;
+      transition: 0.2s;
+    }
+    .plan-btn.active {
+      border-color: var(--primary);
+      background: rgba(0, 196, 204, 0.14);
+      box-shadow: 0 0 0 2px rgba(0, 196, 204, 0.2);
+    }
+    .plan-title { font-size: 13px; font-weight: 700; display: block; }
+    .plan-price { font-size: 15px; font-weight: 800; color: var(--primary); margin-top: 4px; display: block; }
+    .summary {
+      background: var(--card-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      margin: 14px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      font-size: 12.5px;
+    }
+    .summary div span { color: var(--muted); display: block; font-size: 11px; }
+    .summary div strong { color: #fff; font-size: 13.5px; }
+    .btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+    }
+    .btn-success {
+      background: var(--success);
+      color: #052e16;
+    }
+    .btn-whatsapp {
+      background: #25D366;
+      color: #052e16;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+    .btn:disabled { opacity: 0.55; cursor: not-allowed; }
+    .hidden { display: none !important; }
+    .pay-card {
+      margin-top: 16px;
+      background: var(--card-2);
+      border: 1px solid var(--primary);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .pay-title {
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: var(--primary);
+      text-align: center;
+    }
+    .copy-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 10px;
+      background: var(--card);
+      border-radius: 10px;
+      margin-bottom: 8px;
+      border: 1px solid var(--border);
+      gap: 8px;
+    }
+    .copy-row small { color: var(--muted); display: block; font-size: 11px; }
+    .copy-row strong { font-size: 14px; color: #fff; }
+    .copy-btn {
+      background: #334155;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 7px 11px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .copy-btn.copied { background: var(--success); color: #052e16; }
+    .copy-all-btn {
+      width: 100%;
+      background: rgba(0, 196, 204, 0.15);
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      margin: 4px 0 12px;
+    }
+    .warning-box {
+      background: var(--warn-bg);
+      border: 1.5px solid var(--danger);
+      color: #fecaca;
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .error-msg {
+      color: #fca5a5;
+      font-size: 13px;
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight: 600;
+    }
+    .status-screen {
+      text-align: center;
+      padding: 20px 6px;
+    }
+    .status-icon { font-size: 46px; margin-bottom: 10px; }
+    .status-screen h2 { font-size: 20px; margin-bottom: 8px; }
+    .status-screen p { font-size: 14px; color: var(--muted); margin-bottom: 18px; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="brand">
+        <div class="logo">C</div>
+        <div>
+          <h1>Registro Canva Pro</h1>
+          <p>Completa tus datos para activar</p>
+        </div>
+      </div>
+      <div class="timer" id="timer">⏳ 30:00</div>
+    </div>
+
+    <!-- FORMULARIO PRINCIPAL -->
+    <div id="formSection">
+      <div class="field">
+        <label for="nombre">Nombre y Apellido</label>
+        <input type="text" id="nombre" placeholder="Ej: María Pérez" autocomplete="name" />
+      </div>
+
+      <div class="field">
+        <label for="whatsapp">Número de WhatsApp</label>
+        <input type="tel" id="whatsapp" placeholder="Ej: 584141234567" autocomplete="tel" />
+      </div>
+
+      <div class="field">
+        <label for="correo">Correo exacto que usarás en Canva</label>
+        <input type="email" id="correo" placeholder="Ej: tucorreo@gmail.com" autocomplete="email" />
+        <span class="hint">⚠️ Escríbelo bien: a este correo te llegará la invitación de Canva Pro.</span>
+      </div>
+
+      <div class="field">
+        <label>Selecciona tu plan</label>
+        <div class="plans">
+          <button type="button" class="plan-btn active" data-plan="1 mes" data-dias="30" data-precio="900" data-precio-txt="900 Bs">
+            <span class="plan-title">1 Mes</span>
+            <span class="plan-price">900 Bs</span>
+          </button>
+          <button type="button" class="plan-btn" data-plan="3 meses" data-dias="90" data-precio="1800" data-precio-txt="1.800 Bs">
+            <span class="plan-title">3 Meses</span>
+            <span class="plan-price">1.800 Bs</span>
+          </button>
+          <button type="button" class="plan-btn" data-plan="1 año" data-dias="365" data-precio="2600" data-precio-txt="2.600 Bs">
+            <span class="plan-title">1 Año</span>
+            <span class="plan-price">2.600 Bs</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="summary">
+        <div><span>Fecha de inicio</span><strong id="sumInicio">--</strong></div>
+        <div><span>Fecha de vencimiento</span><strong id="sumFin">--</strong></div>
+        <div><span>Duración</span><strong id="sumDias">30 días</strong></div>
+        <div><span>Monto a pagar</span><strong id="sumMonto" style="color:#00c4cc;">900 Bs</strong></div>
+      </div>
+
+      <div id="errorMsg" class="error-msg hidden"></div>
+
+      <button type="button" class="btn btn-primary" id="btnVerPago">Ver datos de Pago Móvil</button>
+
+      <!-- TARJETA DE PAGO MÓVIL -->
+      <div id="paySection" class="pay-card hidden">
+        <div class="pay-title">📲 Datos de Pago Móvil</div>
+
+        <div class="copy-row">
+          <div><small>Banco</small><strong>BANESCO (0134)</strong></div>
+          <button type="button" class="copy-btn" data-copy="0134">Copiar</button>
+        </div>
+
+        <div class="copy-row">
+          <div><small>Cédula</small><strong>18-440-290</strong></div>
+          <button type="button" class="copy-btn" data-copy="18440290">Copiar</button>
+        </div>
+
+        <div class="copy-row">
+          <div><small>Teléfono</small><strong>0414-311-5685</strong></div>
+          <button type="button" class="copy-btn" data-copy="04143115685">Copiar</button>
+        </div>
+
+        <div class="copy-row">
+          <div><small>Monto exacto</small><strong id="payMonto">900 Bs</strong></div>
+          <button type="button" class="copy-btn" id="btnCopyMonto" data-copy="900">Copiar</button>
+        </div>
+
+        <button type="button" class="copy-all-btn" id="btnCopyAll">📋 Copiar todos los datos</button>
+
+        <div class="warning-box">
+          ⚠️ IMPORTANTE: NO le dé al botón de confirmar pago hasta no haber realizado el Pago Móvil.
+        </div>
+
+        <button type="button" class="btn btn-success" id="btnConfirmar">
+          ✅ Ya pagué — Confirmar y registrar
+        </button>
+      </div>
+    </div>
+
+    <!-- PANTALLA DE ÉXITO -->
+    <div id="successSection" class="status-screen hidden">
+      <div class="status-icon">✅</div>
+      <h2>¡Datos registrados!</h2>
+      <p id="successText">Tus datos fueron enviados correctamente. Ahora toca el botón de abajo para enviarnos el capture de tu Pago Móvil y activar tu acceso.</p>
+      <a href="#" target="_blank" class="btn btn-whatsapp" id="btnWhatsapp">💬 Enviar capture por WhatsApp</a>
+    </div>
+
+    <!-- PANTALLA DE EXPIRADO -->
+    <div id="expiredSection" class="status-screen hidden">
+      <div class="status-icon">⏳</div>
+      <h2>Enlace expirado</h2>
+      <p>Han pasado los 30 minutos de sesión. Por favor recarga o solicita un nuevo enlace por WhatsApp para continuar.</p>
+    </div>
+  </div>
+
+  <script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwLu7e_Bo8P8Dnq0aSwiSDJe43mdxdQfSYQ5QXpNZ6KQb5voGG6lggB0v836Kq41VEk/exec';
+    const TU_WHATSAPP = '584163080821';
+
+    // Permite elegir la hoja por URL (?hoja=CANVASplan2), por defecto CANVAS
+    const params = new URLSearchParams(window.location.search);
+    const HOJA_ACTUAL = params.get('hoja') || 'CANVAS';
+
+    let planSeleccionado = { plan: '1 mes', dias: 30, precio: '900', precioTxt: '900 Bs' };
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+    function formatDMY(d) { return `${pad(d.getDate())}/${pad(d.getMonth() + 1)}/${d.getFullYear()}`; }
+    function formatISO(d) { return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; }
+
+    function actualizarResumen() {
+      const hoy = new Date();
+      const fin = new Date(hoy);
+      fin.setDate(fin.getDate() + planSeleccionado.dias);
+
+      document.getElementById('sumInicio').textContent = formatDMY(hoy);
+      document.getElementById('sumFin').textContent = formatDMY(fin);
+      document.getElementById('sumDias').textContent = planSeleccionado.
