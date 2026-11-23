@@ -44,21 +44,12 @@
       margin-bottom: 16px;
       gap: 10px;
     }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .brand { display: flex; align-items: center; gap: 10px; }
     .logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
+      width: 40px; height: 40px; border-radius: 12px;
       background: linear-gradient(135deg, var(--primary), var(--accent));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 20px;
     }
     .brand h1 { font-size: 18px; line-height: 1.2; }
     .brand p { font-size: 12px; color: var(--muted); }
@@ -73,167 +64,91 @@
       white-space: nowrap;
     }
     .field { margin-bottom: 14px; }
-    label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: #e2e8f0;
-    }
-    .hint {
-      font-size: 11.5px;
-      color: #fbbf24;
-      margin-top: 4px;
-      display: block;
-    }
+    label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: #e2e8f0; }
+    .hint { font-size: 11.5px; color: #fbbf24; margin-top: 4px; display: block; }
     input {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--card-2);
-      color: var(--text);
-      font-size: 15px;
-      outline: none;
+      width: 100%; padding: 12px 14px; border-radius: 10px;
+      border: 1px solid var(--border); background: var(--card-2);
+      color: var(--text); font-size: 15px; outline: none;
     }
     input:focus { border-color: var(--primary); }
-    .plans {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-top: 6px;
-    }
+    input:disabled { opacity: 0.6; cursor: not-allowed; }
+    .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 6px; }
     .plan-btn {
-      background: var(--card-2);
-      border: 2px solid var(--border);
-      border-radius: 12px;
-      padding: 12px 6px;
-      color: var(--text);
-      cursor: pointer;
-      text-align: center;
-      transition: 0.2s;
+      background: var(--card-2); border: 2px solid var(--border);
+      border-radius: 12px; padding: 12px 6px; color: var(--text);
+      cursor: pointer; text-align: center; transition: 0.2s;
     }
     .plan-btn.active {
       border-color: var(--primary);
       background: rgba(0, 196, 204, 0.14);
       box-shadow: 0 0 0 2px rgba(0, 196, 204, 0.2);
     }
+    .plan-btn:disabled { opacity: 0.6; cursor: not-allowed; }
     .plan-title { font-size: 13px; font-weight: 700; display: block; }
     .plan-price { font-size: 15px; font-weight: 800; color: var(--primary); margin-top: 4px; display: block; }
     .summary {
-      background: var(--card-2);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 12px;
-      margin: 14px 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      font-size: 12.5px;
+      background: var(--card-2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 12px; margin: 14px 0;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12.5px;
     }
     .summary div span { color: var(--muted); display: block; font-size: 11px; }
     .summary div strong { color: #fff; font-size: 13.5px; }
     .btn {
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 0.2s;
+      width: 100%; padding: 14px; border: none; border-radius: 12px;
+      font-size: 15px; font-weight: 700; cursor: pointer; transition: 0.2s;
     }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: #fff;
-    }
-    .btn-success {
-      background: var(--success);
-      color: #052e16;
-    }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; }
+    .btn-success { background: var(--success); color: #052e16; }
     .btn-whatsapp {
-      background: #25D366;
-      color: #052e16;
-      text-decoration: none;
-      display: inline-block;
-      text-align: center;
+      background: #25D366; color: #052e16;
+      text-decoration: none; display: block; text-align: center;
     }
     .btn:disabled { opacity: 0.55; cursor: not-allowed; }
     .hidden { display: none !important; }
-    .pay-card {
-      margin-top: 16px;
-      background: var(--card-2);
-      border: 1px solid var(--primary);
+    .saved-box {
+      margin-top: 14px;
+      background: rgba(34, 197, 94, 0.14);
+      border: 1.5px solid var(--success);
       border-radius: 14px;
       padding: 14px;
-    }
-    .pay-title {
-      font-size: 15px;
-      font-weight: 800;
-      margin-bottom: 10px;
-      color: var(--primary);
       text-align: center;
     }
+    .saved-box h3 { color: #86efac; font-size: 15px; margin-bottom: 6px; }
+    .saved-box p { color: #e2e8f0; font-size: 13px; line-height: 1.45; margin-bottom: 12px; }
+    .pay-card {
+      margin-top: 14px; background: var(--card-2);
+      border: 1px solid var(--primary); border-radius: 14px; padding: 14px;
+    }
+    .pay-title { font-size: 15px; font-weight: 800; margin-bottom: 10px; color: var(--primary); text-align: center; }
     .copy-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 9px 10px;
-      background: var(--card);
-      border-radius: 10px;
-      margin-bottom: 8px;
-      border: 1px solid var(--border);
-      gap: 8px;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 9px 10px; background: var(--card); border-radius: 10px;
+      margin-bottom: 8px; border: 1px solid var(--border); gap: 8px;
     }
     .copy-row small { color: var(--muted); display: block; font-size: 11px; }
     .copy-row strong { font-size: 14px; color: #fff; }
     .copy-btn {
-      background: #334155;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 7px 11px;
-      font-size: 12px;
-      font-weight: 700;
-      cursor: pointer;
-      white-space: nowrap;
+      background: #334155; color: #fff; border: none; border-radius: 8px;
+      padding: 7px 11px; font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap;
     }
     .copy-btn.copied { background: var(--success); color: #052e16; }
     .copy-all-btn {
-      width: 100%;
-      background: rgba(0, 196, 204, 0.15);
-      color: var(--primary);
-      border: 1px solid var(--primary);
-      border-radius: 10px;
-      padding: 10px;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-      margin: 4px 0 12px;
+      width: 100%; background: rgba(0, 196, 204, 0.15); color: var(--primary);
+      border: 1px solid var(--primary); border-radius: 10px; padding: 10px;
+      font-size: 13px; font-weight: 700; cursor: pointer; margin: 4px 0 12px;
     }
     .warning-box {
-      background: var(--warn-bg);
-      border: 1.5px solid var(--danger);
-      color: #fecaca;
-      border-radius: 12px;
-      padding: 12px;
-      font-size: 13px;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 12px;
-      line-height: 1.4;
+      background: var(--warn-bg); border: 1.5px solid var(--danger);
+      color: #fecaca; border-radius: 12px; padding: 12px;
+      font-size: 13px; font-weight: 700; text-align: center;
+      margin-bottom: 12px; line-height: 1.4;
     }
     .error-msg {
-      color: #fca5a5;
-      font-size: 13px;
-      margin-bottom: 10px;
-      text-align: center;
-      font-weight: 600;
+      color: #fca5a5; font-size: 13px; margin-bottom: 10px;
+      text-align: center; font-weight: 600;
     }
-    .status-screen {
-      text-align: center;
-      padding: 20px 6px;
-    }
+    .status-screen { text-align: center; padding: 20px 6px; }
     .status-icon { font-size: 46px; margin-bottom: 10px; }
     .status-screen h2 { font-size: 20px; margin-bottom: 8px; }
     .status-screen p { font-size: 14px; color: var(--muted); margin-bottom: 18px; line-height: 1.5; }
@@ -252,7 +167,6 @@
       <div class="timer" id="timer">⏳ 30:00</div>
     </div>
 
-    <!-- FORMULARIO PRINCIPAL -->
     <div id="formSection">
       <div class="field">
         <label for="nombre">Nombre y Apellido</label>
@@ -273,15 +187,15 @@
       <div class="field">
         <label>Selecciona tu plan</label>
         <div class="plans">
-          <button type="button" class="plan-btn active" data-plan="1 mes" data-dias="30" data-precio="900" data-precio-txt="900 Bs">
+          <button type="button" class="plan-btn active" onclick="seleccionarPlan(this, '1 mes', 30, '900', '900 Bs')">
             <span class="plan-title">1 Mes</span>
             <span class="plan-price">900 Bs</span>
           </button>
-          <button type="button" class="plan-btn" data-plan="3 meses" data-dias="90" data-precio="1800" data-precio-txt="1.800 Bs">
+          <button type="button" class="plan-btn" onclick="seleccionarPlan(this, '3 meses', 90, '1800', '1.800 Bs')">
             <span class="plan-title">3 Meses</span>
             <span class="plan-price">1.800 Bs</span>
           </button>
-          <button type="button" class="plan-btn" data-plan="1 año" data-dias="365" data-precio="2600" data-precio-txt="2.600 Bs">
+          <button type="button" class="plan-btn" onclick="seleccionarPlan(this, '1 año', 365, '2600', '2.600 Bs')">
             <span class="plan-title">1 Año</span>
             <span class="plan-price">2.600 Bs</span>
           </button>
@@ -297,79 +211,244 @@
 
       <div id="errorMsg" class="error-msg hidden"></div>
 
-      <button type="button" class="btn btn-primary" id="btnVerPago">Ver datos de Pago Móvil</button>
+      <!-- PASO 1: GUARDAR DATOS PRIMERO -->
+      <button type="button" class="btn btn-primary" id="btnGuardar" onclick="guardarDatosCliente()">
+        💾 Guardar datos y pedir invitación
+      </button>
 
-      <!-- TARJETA DE PAGO MÓVIL -->
+      <!-- PASO 2: CONFIRMACIÓN + BOTÓN PARA VER PAGO MÓVIL -->
+      <div id="savedSection" class="saved-box hidden">
+        <h3>✅ ¡Datos guardados con éxito!</h3>
+        <p id="savedText">Ya recibimos tu correo para enviarte la invitación de Canva Pro. Cuando revises tu correo y confirmes el acceso, pulsa abajo para ver los datos de pago.</p>
+        <button type="button" class="btn btn-success" id="btnVerPago" onclick="mostrarPagoMovil()">
+          📲 Ver datos de Pago Móvil
+        </button>
+      </div>
+
+      <!-- PASO 3: DATOS DE PAGO MÓVIL + ENVIAR CAPTURE -->
       <div id="paySection" class="pay-card hidden">
         <div class="pay-title">📲 Datos de Pago Móvil</div>
 
         <div class="copy-row">
           <div><small>Banco</small><strong>BANESCO (0134)</strong></div>
-          <button type="button" class="copy-btn" data-copy="0134">Copiar</button>
+          <button type="button" class="copy-btn" onclick="copiarTexto('0134', this)">Copiar</button>
         </div>
 
         <div class="copy-row">
           <div><small>Cédula</small><strong>18-440-290</strong></div>
-          <button type="button" class="copy-btn" data-copy="18440290">Copiar</button>
+          <button type="button" class="copy-btn" onclick="copiarTexto('18440290', this)">Copiar</button>
         </div>
 
         <div class="copy-row">
           <div><small>Teléfono</small><strong>0414-311-5685</strong></div>
-          <button type="button" class="copy-btn" data-copy="04143115685">Copiar</button>
+          <button type="button" class="copy-btn" onclick="copiarTexto('04143115685', this)">Copiar</button>
         </div>
 
         <div class="copy-row">
           <div><small>Monto exacto</small><strong id="payMonto">900 Bs</strong></div>
-          <button type="button" class="copy-btn" id="btnCopyMonto" data-copy="900">Copiar</button>
+          <button type="button" class="copy-btn" id="btnCopyMonto" onclick="copiarMonto(this)">Copiar</button>
         </div>
 
-        <button type="button" class="copy-all-btn" id="btnCopyAll">📋 Copiar todos los datos</button>
+        <button type="button" class="copy-all-btn" onclick="copiarTodo(this)">📋 Copiar todos los datos</button>
 
         <div class="warning-box">
-          ⚠️ IMPORTANTE: NO le dé al botón de confirmar pago hasta no haber realizado el Pago Móvil.
+          ⚠️ IMPORTANTE: Realiza el Pago Móvil y luego pulsa el botón verde para enviarnos tu capture por WhatsApp.
         </div>
 
-        <button type="button" class="btn btn-success" id="btnConfirmar">
-          ✅ Ya pagué — Confirmar y registrar
-        </button>
+        <a href="#" target="_blank" class="btn btn-whatsapp" id="btnWhatsapp">
+          💬 Ya pagué — Enviar capture por WhatsApp
+        </a>
       </div>
     </div>
 
-    <!-- PANTALLA DE ÉXITO -->
-    <div id="successSection" class="status-screen hidden">
-      <div class="status-icon">✅</div>
-      <h2>¡Datos registrados!</h2>
-      <p id="successText">Tus datos fueron enviados correctamente. Ahora toca el botón de abajo para enviarnos el capture de tu Pago Móvil y activar tu acceso.</p>
-      <a href="#" target="_blank" class="btn btn-whatsapp" id="btnWhatsapp">💬 Enviar capture por WhatsApp</a>
-    </div>
-
-    <!-- PANTALLA DE EXPIRADO -->
     <div id="expiredSection" class="status-screen hidden">
       <div class="status-icon">⏳</div>
       <h2>Enlace expirado</h2>
-      <p>Han pasado los 30 minutos de sesión. Por favor recarga o solicita un nuevo enlace por WhatsApp para continuar.</p>
+      <p>Han pasado los 30 minutos de sesión. Recarga la página o solicita un nuevo enlace por WhatsApp.</p>
     </div>
   </div>
 
   <script>
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwLu7e_Bo8P8Dnq0aSwiSDJe43mdxdQfSYQ5QXpNZ6KQb5voGG6lggB0v836Kq41VEk/exec';
-    const TU_WHATSAPP = '584163080821';
+    var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwLu7e_Bo8P8Dnq0aSwiSDJe43mdxdQfSYQ5QXpNZ6KQb5voGG6lggB0v836Kq41VEk/exec';
+    var TU_WHATSAPP = '584163080821';
+    var params = new URLSearchParams(window.location.search);
+    var HOJA_ACTUAL = params.get('hoja') || 'CANVAS';
 
-    // Permite elegir la hoja por URL (?hoja=CANVASplan2), por defecto CANVAS
-    const params = new URLSearchParams(window.location.search);
-    const HOJA_ACTUAL = params.get('hoja') || 'CANVAS';
+    var planActual = { plan: '1 mes', dias: 30, precio: '900', precioTxt: '900 Bs' };
+    var yaGuardado = false;
 
-    let planSeleccionado = { plan: '1 mes', dias: 30, precio: '900', precioTxt: '900 Bs' };
+    function pad(n) {
+      return n < 10 ? '0' + n : '' + n;
+    }
 
-    function pad(n) { return String(n).padStart(2, '0'); }
-    function formatDMY(d) { return `${pad(d.getDate())}/${pad(d.getMonth() + 1)}/${d.getFullYear()}`; }
-    function formatISO(d) { return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; }
+    function formatDMY(d) {
+      return pad(d.getDate()) + '/' + pad(d.getMonth() + 1) + '/' + d.getFullYear();
+    }
+
+    function formatISO(d) {
+      return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+    }
 
     function actualizarResumen() {
-      const hoy = new Date();
-      const fin = new Date(hoy);
-      fin.setDate(fin.getDate() + planSeleccionado.dias);
+      var hoy = new Date();
+      var fin = new Date(hoy.getTime());
+      fin.setDate(fin.getDate() + planActual.dias);
 
       document.getElementById('sumInicio').textContent = formatDMY(hoy);
       document.getElementById('sumFin').textContent = formatDMY(fin);
-      document.getElementById('sumDias').textContent = planSeleccionado.
+      document.getElementById('sumDias').textContent = planActual.dias + ' días';
+      document.getElementById('sumMonto').textContent = planActual.precioTxt;
+      document.getElementById('payMonto').textContent = planActual.precioTxt;
+    }
+
+    function seleccionarPlan(btn, plan, dias, precio, precioTxt) {
+      if (yaGuardado) return;
+      var botones = document.querySelectorAll('.plan-btn');
+      for (var i = 0; i < botones.length; i++) {
+        botones[i].classList.remove('active');
+      }
+      btn.classList.add('active');
+      planActual = { plan: plan, dias: dias, precio: precio, precioTxt: precioTxt };
+      actualizarResumen();
+    }
+
+    function mostrarError(msg) {
+      var el = document.getElementById('errorMsg');
+      el.textContent = msg;
+      el.classList.remove('hidden');
+    }
+
+    function ocultarError() {
+      document.getElementById('errorMsg').classList.add('hidden');
+    }
+
+    function guardarDatosCliente() {
+      if (yaGuardado) return;
+
+      var nombre = document.getElementById('nombre').value.trim();
+      var whatsapp = document.getElementById('whatsapp').value.trim();
+      var correo = document.getElementById('correo').value.trim();
+
+      if (!nombre || !whatsapp || !correo) {
+        mostrarError('Por favor completa tu nombre, WhatsApp y correo de Canva.');
+        return;
+      }
+      if (correo.indexOf('@') === -1 || correo.indexOf('.') === -1) {
+        mostrarError('Ingresa un correo electrónico válido.');
+        return;
+      }
+      ocultarError();
+
+      var btn = document.getElementById('btnGuardar');
+      btn.disabled = true;
+      btn.textContent = '⏳ Guardando tus datos...';
+
+      var payload = {
+        accion: 'guardar',
+        hoja: HOJA_ACTUAL,
+        esCliente: true,
+        datos: {
+          nombre: nombre,
+          whatsapp: whatsapp,
+          correo: correo,
+          plan: planActual.plan,
+          inicio: formatISO(new Date())
+        }
+      };
+
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      })
+      .then(function(res) { return res.json(); })
+      .then(function(json) {
+        if (!json.ok) throw new Error(json.error || 'Error al guardar');
+
+        yaGuardado = true;
+        document.getElementById('nombre').disabled = true;
+        document.getElementById('whatsapp').disabled = true;
+        document.getElementById('correo').disabled = true;
+        var botonesPlan = document.querySelectorAll('.plan-btn');
+        for (var i = 0; i < botonesPlan.length; i++) {
+          botonesPlan[i].disabled = true;
+        }
+
+        btn.classList.add('hidden');
+        document.getElementById('savedText').textContent =
+          'Ya recibimos tu correo (' + correo + ') para enviarte la invitación de Canva Pro (' + planActual.plan + '). Cuando verifiques tu acceso, pulsa abajo para ver los datos de Pago Móvil.';
+        document.getElementById('savedSection').classList.remove('hidden');
+
+        var msgWA = 'Hola, soy ' + nombre + '. Ya verifiqué mi acceso y realicé el Pago Móvil de ' + planActual.precioTxt + ' por el plan Canva Pro (' + planActual.plan + '). Mi correo es: ' + correo + '. Aquí envío mi capture.';
+        document.getElementById('btnWhatsapp').href = 'https://wa.me/' + TU_WHATSAPP + '?text=' + encodeURIComponent(msgWA);
+      })
+      .catch(function() {
+        mostrarError('No se pudo conectar. Intenta de nuevo en unos segundos.');
+        btn.disabled = false;
+        btn.textContent = '💾 Guardar datos y pedir invitación';
+      });
+    }
+
+    function mostrarPagoMovil() {
+      var pay = document.getElementById('paySection');
+      pay.classList.remove('hidden');
+      pay.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function copiarTexto(texto, btn) {
+      function marcar() {
+        var orig = btn.textContent;
+        btn.textContent = '✓ Copiado';
+        btn.classList.add('copied');
+        setTimeout(function() {
+          btn.textContent = orig;
+          btn.classList.remove('copied');
+        }, 1500);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(texto).then(marcar).catch(function() { fallbackCopy(texto, marcar); });
+      } else {
+        fallbackCopy(texto, marcar);
+      }
+    }
+
+    function copiarMonto(btn) {
+      copiarTexto(planActual.precio, btn);
+    }
+
+    function copiarTodo(btn) {
+      var texto = 'Pago Móvil\nBanco: BANESCO (0134)\nCédula: 18440290\nTeléfono: 04143115685\nMonto: ' + planActual.precioTxt;
+      copiarTexto(texto, btn);
+    }
+
+    function fallbackCopy(texto, cb) {
+      var ta = document.createElement('textarea');
+      ta.value = texto;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      cb();
+    }
+
+    // Inicia fechas y reloj al cargar
+    actualizarResumen();
+
+    var segundos = 30 * 60;
+    var timerEl = document.getElementById('timer');
+    var intervalo = setInterval(function() {
+      segundos--;
+      if (segundos <= 0) {
+        clearInterval(intervalo);
+        timerEl.textContent = '⏳ 00:00';
+        document.getElementById('formSection').classList.add('hidden');
+        document.getElementById('expiredSection').classList.remove('hidden');
+        return;
+      }
+      var m = Math.floor(segundos / 60);
+      var s = segundos % 60;
+      timerEl.textContent = '⏳ ' + pad(m) + ':' + pad(s);
+    }, 1000);
+  </script>
+</body>
+</html>
